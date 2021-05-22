@@ -1,0 +1,345 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+astextnet custom theme
+template: newtheme.scss
+
+Anthony Sallis
+23 March 2019
+5 June 2020 
+15 July 2020 
+22 November 2020
+13 March 2021 bootstrap 5 beta
+23 May 2021 Dart Sass, Bootsrap 5.01
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* misc */
+
+$base-ribbon-size: 12px ;
+$base-ribbon-bg: #cdcdcd ;
+
+.base-ribbon {
+	font-size: $base-ribbon-size;
+	background-color: $base-ribbon-bg;
+	
+}
+
+.top-ribbonstyle {
+	background-color: #fffff0;
+	border-bottom:thin solid #999;
+	font-size: 1.2rem;
+}
+ .p3-boxshadow {
+	-webkit-box-shadow: 0 3px 2px #777;
+	-moz-box-shadow: 0 3px 2px #777;
+	box-shadow: 0 3px 2px #777;
+ }
+
+ 
+ 
+// table chequered
+
+$tbl-chq-row-odd: rgba(0, 0, 0, 0.05) !default ;
+$tbl-chq-row-odd-cell-even: rgba(50, 0, 0, 0.05) !default ;  //lighter centre square
+$tbl-chq-cell-even: rgba(150, 0, 0, 0.05) !default ;
+
+.table-chequered tbody {
+	tr:nth-of-type(odd) {
+		background-color: $tbl-chq-row-odd;
+		td:nth-of-type(even) {
+			background-color: $tbl-chq-row-odd-cell-even !important;
+		}
+	}
+	tr td:nth-of-type(even) {
+		background-color: $tbl-chq-cell-even; 
+	}
+}
+// https://css-tricks.com/responsive-data-tables/
+ 
+// font families
+$font-fams: () !default ;
+$font-fams: map-merge((
+	'cn': 	"courier new",
+	'a':	"arial",
+	'tnr':	"times new roman",
+	'hlv':  "helvetica",
+	'cs':  	"comic sans ms",
+	'vrd':  "verdana"
+	), $font-fams );
+	
+@each $name, $value in $font-fams {
+	.ff-#{$name}{
+		font-family: $value;
+	}
+}	
+
+// new colours for new themes
+
+$red-ant:  #9a2617 !default; //AAA darkest ruby
+$choc-mid: #c2571a !default; // AA darkest coral?
+$mint-daffodil: #829356 !default; // AA darkest kelly
+$blue-flash:  #093145 !default; //AAA darkest indigo
+$emerald-pool: #26d01b !default;
+$amber-sun: #ffcc00 !default;  // hi contrast yellow
+$green-skin: #d0d377 !default;
+$pink-rose: #c02f1d !default; // AA ruby
+$sombre-reptile:  #332f2f !default;
+$astext-pcolour:  #0079ca !default; // theme primary colour
+$astext-scolour:  #6c757d !default; // theme secondary colour
+
+$colors: () !default;
+$colors: map-merge((
+  "red-ant":    $red-ant,
+  "choc-mid":   $choc-mid,
+  "mint-daffodil": $mint-daffodil,
+  "blue-flash":  $blue-flash,
+  "emerald-pool": $emerald-pool,
+  "amber-sun":  $amber-sun,
+  "green-skin": $green-skin,
+  "pink-rose":  $pink-rose,
+  "sombre-reptile":   $sombre-reptile,
+  "astextprimary":    $astext-pcolour,
+  "astextsecondary":    $astext-scolour
+), $colors);
+
+$anthony:       $red-ant !default;
+$darkcoral:     $choc-mid !default;
+$hieu:          $mint-daffodil !default;
+$john:          $blue-flash !default;
+$order65:       $sombre-reptile !default;
+$maria:         $emerald-pool !default;
+$nick:          $amber-sun !default;
+$peter:         $green-skin !default;
+$ruby:         	$pink-rose !default;
+$astextprimary:    $astext-pcolour !default;
+$astextsecondary:    $astext-scolour !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge((
+  "anthony":    $anthony,
+  "darkcoral":  $darkcoral,
+  "hieu":       $hieu,
+  "john":       $john,
+  "maria":      $maria,
+  "nick":       $nick,
+  "peter":      $peter,
+  "ruby":       $ruby,
+  "order65":    $order65,
+  "astextprimary":    $astextprimary,  
+  "astextsecondary":    $astextsecondary  
+), $theme-colors);
+
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret:              true !default;
+$enable-rounded:            true !default;
+$enable-shadows:            true !default;
+$enable-gradients:          true !default;
+$enable-transitions:        true !default;
+$enable-hover-media-query:  false !default;
+$enable-grid-classes:       true !default;
+$enable-print-styles:       true !default;
+
+// some inhouse colours //
+
+$darkbrown: #654321 !default;
+$darkbrownhue: adjust-hue(#654321, (.2 * 360)) !default ;
+$darkpurple: #4f0e5a !default;
+$darkgreen: #006400 !default;
+$darkorange: #e22510 !default;
+$brightblue: #0000CD !default ;
+
+$paleyellow: #ffffb8  !default;
+$hivisyellow: #ffcc00 !default ;
+$hivisyellowhue: adjust-hue(#ffcc00, (.2 * 360)) !default ;
+$navyblue: #000080 !default ;
+
+.bg-paleyellow {
+	background-color: $paleyellow ;
+}
+
+.hivis {
+	background-color: $hivisyellow ;
+	color: #000 ;	
+}
+
+.hivishue {
+	background-color: $hivisyellowhue ;
+}
+
+.bg-hivis {   
+		background-color: #000;
+		color: $hivisyellow; 
+}
+
+.brightblue {
+	color: $brightblue ;
+	background-color: #fff ;
+}
+.bg-brightblue {
+	background-color: $brightblue ;
+	color: #fff;
+}
+
+.navyblue {
+	color: $navyblue ;
+	background-color: #fff;
+}
+.bg-navyblue {   
+		background-color: $navyblue;
+		color: #fff; 
+}
+
+.darkpurple {
+	color: $darkpurple;
+}
+.bg-darkpurple {   
+		background-color: $darkpurple;
+		color: #fff; 
+}
+
+.darkgreen {
+	color: $darkgreen;
+}
+.bg-darkgreen {   
+		background-color: $darkgreen;
+		color: #fff; 
+}
+
+.darkorange {
+	color: $darkorange;
+}
+.bg-darkorange {   
+		background-color: $darkorange;
+		color: #fff; 
+}
+
+.darkbrown {
+	color:  $darkbrown ;
+}
+.bg-darkbrown {   
+		background-color: $darkbrown;
+		color: #fff; 
+	}
+.bg-darkbrownhue {   
+		background-color: $darkbrownhue;
+		color: #000; 
+	}	
+	
+	
+
+// home icon
+$homeicon-size: 200% !default;
+
+span.material-icons.hivis {
+	font-size: $homeicon-size ;
+}	
+	
+	
+	
+// spacing extended
+$spacer: 1rem;
+$spacers: () !default;
+$spacers: map-merge((
+	6: ($spacer * 2),
+	7: ($spacer * 2.5),
+	8: ($spacer * 3),
+	9: ($spacer * 3.5),
+	10: ($spacer * 4),
+	11: ($spacer * 4.5),
+	12: ($spacer * 5)
+), $spacers);
+
+
+/** apply font-weights / font-styles - for any included font
+*
+**/
+
+$font-size-base: 1rem;
+
+/* size multiplier */
+@function sizeMultiplier($c: 1, $m: $font-size-base){
+  @return $c * $m;
+}
+
+
+/* multiply wfont weight values */
+@function weightMultiplier($c: 0, $m: 100){
+  @if $c > 0 {
+    @return $c * $m;
+  } @else {
+    @return normal;
+  }
+}
+
+$font-sizes: () !default;
+$font-sizes: map-merge((
+  8: sizeMultiplier(.5),
+  10: sizeMultiplier(.625),
+  12: sizeMultiplier(.75),
+  13: sizeMultiplier(.8125),
+  14: sizeMultiplier(.875),
+  16: sizeMultiplier(1),
+  18: sizeMultiplier(1.125),
+  20: sizeMultiplier(1.25),
+  22: sizeMultiplier(1.375),
+  24: sizeMultiplier(1.5),
+  26: sizeMultiplier(1.625),
+  28: sizeMultiplier(1.75),
+  30: sizeMultiplier(1.875),
+  32: sizeMultiplier(2),
+  34: sizeMultiplier(2.125),
+  36: sizeMultiplier(2.25),
+  38: sizeMultiplier(2.375),
+  40: sizeMultiplier(2.5),
+  42: sizeMultiplier(2.625),
+  44: sizeMultiplier(2.75),
+  46: sizeMultiplier(2.875),
+  48: sizeMultiplier(3),
+  50: sizeMultiplier(3.125)
+),$font-sizes);
+
+$font-weights: () !default;
+$font-weights: map-merge((
+  0: weightMultiplier(),
+  1: weightMultiplier(1),
+  2: weightMultiplier(2),
+  3: weightMultiplier(3),
+  4: weightMultiplier(4),
+  5: weightMultiplier(5),
+  6: weightMultiplier(6),
+  7: weightMultiplier(7),
+  8: weightMultiplier(8),
+  9: weightMultiplier(9)
+), $font-weights);
+
+$font-styles: () !default;
+$font-styles: map-merge((
+  'n': normal,
+  'i': italic,
+  'o': oblique
+), $font-styles);
+
+@each $name, $value in $font-weights {
+  .fw-#{$name}{
+    font-weight: $value;
+  }
+}
+
+@each $name, $value in $font-styles{
+  .fs-#{$name}{
+    font-style: $value;
+  }
+}
+
+@each $name, $value in $font-sizes{
+  .font-#{$name}{
+    font-size: $value;
+  }
+}	
+	
+/**
+* IMPORT BOOTSTRAP
+**/
+
+
+
+@import 'node_modules/bootstrap/scss/bootstrap'; 

@@ -1,0 +1,361 @@
+// variable overrides for siteNNN
+
+
+/* body padding for this site */
+$site006-bodymargin: 0 0 3rem 0 !default;
+$site006b-paddingtop: 2.475rem !default;
+$site006b-paddingtop-sm: 5rem ;
+$site006b-paddingtop-xs: 5rem ;
+
+body { 
+	margin: $site006-bodymargin !important ;
+	padding-top: $site006b-paddingtop;  
+	
+}
+
+/* mqs for mydata service, body padding (see above)  */
+
+@media (max-width: 991.98px) { 
+	.mydata {
+		display: flex;
+		flex-wrap: wrap !important;
+		
+	}
+
+}
+
+@media (max-width: 767.98px) {
+	
+}
+
+@media (max-width: 575.98px) {
+	
+	.pheading {
+		display: none;
+	}
+ 
+	.my-masthead .display-3 {
+		padding-top: 2rem;
+	}
+ 
+ 
+ 
+ }
+
+/* misc */
+
+$base-ribbon-size: 12px ;
+$base-ribbon-bg: #cdcdcd ;
+
+.base-ribbon {
+	font-size: $base-ribbon-size;
+	background-color: $base-ribbon-bg;
+	
+}
+
+/*
+$top-ribbon-link: #dddddd !default ;
+$top-ribbon-linkhov: lighten($top-ribbon-link, 20%) !default;
+
+.top-ribbon a {
+	color: $top-ribbon-link ;
+	text-decoration: none;
+	&:hover {
+		color:  $top-ribbon-linkhov ;
+		text-decoration: none;
+		background-color: #fffff0;
+	}
+}
+*/
+
+
+.top-ribbonstyle {
+	background-color: #fffff0;
+	border-bottom:thin solid #999;
+	font-size: 1.2rem;
+}
+ .p3-boxshadow {
+	-webkit-box-shadow: 0 3px 2px #777;
+	-moz-box-shadow: 0 3px 2px #777;
+	box-shadow: 0 3px 2px #777;
+ }
+
+
+
+
+// font families
+$font-fams: () !default ;
+$font-fams: map-merge((
+	'cn': 	"courier new",
+	'a':	"arial",
+	'tnr':	"times new roman",
+	'hlv':  "helvetica",
+	'cs':  	"comic sans ms",
+	'vrd':  "verdana"
+	), $font-fams );
+	
+@each $name, $value in $font-fams {
+	.ff-#{$name}{
+		font-family: $value;
+	}
+}	
+
+
+/* larger checks and radios, realign label (now in _form.scss)
+$input-type-size: 20px !default;
+input[type="radio"],
+input[type="checkbox"] {
+  height: $input-type-size;
+  width: $input-type-size;
+}
+$label-realign-top: 2px !default;
+$label-realign-left: 5px !default;
+input[type="radio"] + .form-check-label,
+input[type="checkbox"] + .form-check-label  {
+	position: relative;
+    top: $label-realign-top;
+	left: $label-realign-left;
+}
+*/
+
+// new colours for new themes
+
+$red-ant:  #e83030 !default;
+$choc-mid: #9f07b9 !default;
+$mint-daffodil: #afaa08 !default;
+$blue-flash:  #10C3CF !default;
+$emerald-pool: #26d01b !default;
+$amber-sun: #efaf3c !default;
+$green-skin: #DCE064 !default;
+$pink-rose: #d072bf !default;
+$sombre-reptile:  #332f2f !default;
+$theme-pcolour:  #0079ca !default; // theme primary colour
+$theme-scolour:  #6c757d !default; // theme secondary colour
+
+$colors: () !default;
+$colors: map-merge((
+  "red-ant":    $red-ant,
+  "choc-mid":   $choc-mid,
+  "mint-daffodil": $mint-daffodil,
+  "blue-flash":  $blue-flash,
+  "emerald-pool": $emerald-pool,
+  "amber-sun":  $amber-sun,
+  "green-skin": $green-skin,
+  "pink-rose":  $pink-rose,
+  "sombre-reptile":   $sombre-reptile,
+  "olsprimary":    $theme-pcolour,
+  "olssecondary":    $theme-scolour
+), $colors);
+
+$anthony:       $red-ant !default;
+$helen:         $choc-mid !default;
+$hieu:          $mint-daffodil !default;
+$john:          $blue-flash !default;
+$order65:       $sombre-reptile !default;
+$maria:         $emerald-pool !default;
+$nick:          $amber-sun !default;
+$peter:         $green-skin !default;
+$vicki:         $pink-rose !default;
+$olsprimary:    $theme-pcolour !default;
+$olssecondary:    $theme-scolour !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge((
+  "anthony":    $anthony,
+  "helen":      $helen,
+  "hieu":       $hieu,
+  "john":       $john,
+  "maria":      $maria,
+  "nick":       $nick,
+  "peter":      $peter,
+  "vicki":      $vicki,
+  "order65":    $order65,
+  "olsprimary":    $olsprimary,  
+  "olssecondary":    $olssecondary  
+), $theme-colors);
+
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret:              true !default;
+$enable-rounded:            true !default;
+$enable-shadows:            true !default;
+$enable-gradients:          true !default;
+$enable-transitions:        true !default;
+$enable-hover-media-query:  false !default;
+$enable-grid-classes:       true !default;
+$enable-print-styles:       true !default;
+
+
+// some simple inhouse colours //
+
+.darkpurple {
+	color: #4f0e5a ;
+}
+
+.darkgreen {
+	color: #006400 ;
+}
+
+.darkorange {
+	color: #e22510 ;
+}
+
+
+// stop underlin on authlinks //
+
+.auth-links-item a {
+		text-decoration: none !important ;
+	}
+.auth-links-item a:hover {
+		color: #000 !important ;
+	}
+
+// quicktest for ng directives //
+
+.ng-classes {
+	color: darkgreen ;
+	background-color: #d0d0d0 ;
+	
+}
+.ng-classes2 {
+	color: red ;
+	background-color: yellow ;
+	
+}	
+
+/** apply font-weights / font-styles - for any included font
+*
+**/
+
+$font-size-base: 1rem;
+
+/* size multiplier */
+@function sizeMultiplier($c: 1, $m: $font-size-base){
+  @return $c * $m;
+}
+
+
+/* multiply wfont weight values */
+@function weightMultiplier($c: 0, $m: 100){
+  @if $c > 0 {
+    @return $c * $m;
+  } @else {
+    @return normal;
+  }
+}
+
+
+
+$font-sizes: () !default;
+$font-sizes: map-merge((
+  8: sizeMultiplier(.5),
+  10: sizeMultiplier(.625),
+  12: sizeMultiplier(.75),
+  13: sizeMultiplier(.8125),
+  14: sizeMultiplier(.875),
+  16: sizeMultiplier(1),
+  20: sizeMultiplier(1.25),
+  22: sizeMultiplier(1.375),
+  24: sizeMultiplier(1.5),
+  26: sizeMultiplier(1.625),
+  28: sizeMultiplier(1.75),
+  30: sizeMultiplier(1.875),
+  32: sizeMultiplier(2),
+  36: sizeMultiplier(2.25),
+  38: sizeMultiplier(2.375),
+  40: sizeMultiplier(2.5),
+  50: sizeMultiplier(3.125)
+
+),$font-sizes);
+
+$font-weights: () !default;
+$font-weights: map-merge((
+  0: weightMultiplier(),
+  1: weightMultiplier(1),
+  2: weightMultiplier(2),
+  3: weightMultiplier(3),
+  4: weightMultiplier(4),
+  5: weightMultiplier(5),
+  6: weightMultiplier(6),
+  7: weightMultiplier(7),
+  8: weightMultiplier(8),
+  9: weightMultiplier(9)
+), $font-weights);
+
+$font-styles: () !default;
+$font-styles: map-merge((
+  'n': normal,
+  'i': italic,
+  'o': oblique
+), $font-styles);
+
+@each $name, $value in $font-weights {
+  .fw-#{$name}{
+    font-weight: $value;
+  }
+}
+
+@each $name, $value in $font-styles{
+  .fs-#{$name}{
+    font-style: $value;
+  }
+}
+
+@each $name, $value in $font-sizes{
+  .font-#{$name}{
+    font-size: $value;
+  }
+}	
+	
+
+@media (max-width: 575.98px) {
+	
+	}
+
+
+
+
+
+
+/**
+* variable definitions for making css changes etc
+**/
+@import './partials/variables';
+
+/**
+* function definitions if need are imported here
+**/
+@import './partials/functions';
+
+
+/** Mixins **/
+@import './partials/mixins';
+@import './partials/form';
+
+
+/**
+* default Bootstrap SASS file
+* define bootstrap specific overrides by using the _variables.scss file
+**/
+
+@import 'node_modules/bootstrap/scss/bootstrap'; // default Bootstrap 4.0.0 css sass definitions
+
+
+/**
+* Add additional imports here for specific project styles etc
+*
+**/
+
+@import './partials/html';
+@import './partials/misc'; // spinners etc
+@import './partials/header';
+@import './partials/breadcrumbs'; 
+@import './partials/landing';
+
+@import './partials/summary';
+@import './partials/pancake';
+@import './partials/footer';
+
+
+// Not required for Production applications
+@import './partials/themenotes';

@@ -1,0 +1,16 @@
+{
+  "name": "sassops",
+  "version": "1.0.0",
+  "description": "Sass latest Bootstrap with mods",
+  "main": "index.js",
+  "scripts": {
+    "intranet": "sass newtheme.scss astext.css --style expanded",
+    "internet": "sass newtheme.scss astextnet.css --style expanded",
+    "internet-min": "sass newtheme.scss astextnet.min.css --style compressed"
+  },
+  "author": "Anthony Sallis",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.0.1"
+  }
+}
